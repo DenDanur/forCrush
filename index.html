@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan untuk Xylaku</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            transition: background 3s ease;
+            padding: 0 10px; 
+        }
+        .message {
+            font-size: 2rem;
+            line-height: 1.5;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+        }
+        .message span {
+            font-weight: bold;
+        }
+        .additional-message {
+            font-size: 1rem;
+            line-height: 1.5;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: justify;
+            word-wrap: break-word; /* Membungkus kata-kata panjang agar tidak keluar layar */
+        }
+
+        /* Media query untuk perangkat dengan lebar layar di bawah 600px */
+        @media (max-width: 600px) {
+            .message {
+                font-size: 1.5rem; /* Ukuran font lebih kecil di layar kecil */
+            }
+            .additional-message {
+                font-size: 0.9rem; /* Ukuran font lebih kecil */
+                padding: 10px; /* Mengurangi padding */
+            }
+        }
+    </style>
+    <script>
+        function getGreetingAndBackground() {
+            const hours = new Date().getHours();
+            let greeting = "";
+            let background = "";
+
+            if (hours >= 5 && hours < 12) {
+                greeting = "Selamat pagi";
+                background = "linear-gradient(135deg, #FFDEE9, #B5FFFC)";
+            } else if (hours >= 12 && hours < 15) {
+                greeting = "Selamat siang";
+                background = "linear-gradient(135deg, #FFE29F, #FFA99F)";
+            } else if (hours >= 15 && hours < 18) {
+                greeting = "Selamat sore";
+                background = "linear-gradient(135deg, #FDB99B, #CF8BF3)";
+            } else {
+                greeting = "Selamat malam";
+                background = "linear-gradient(135deg, #2E3192, #1BFFFF)";
+            }
+
+            return { greeting, background };
+        }
+
+        function displayMessage() {
+            const messageContainer = document.getElementById("message");
+            const { greeting, background } = getGreetingAndBackground();
+
+            messageContainer.innerHTML = `${greeting} <span>Xylaku Tersayang,</span>`;
+            document.body.style.background = background;
+        }
+
+        document.addEventListener("DOMContentLoaded", displayMessage);
+    </script>
+</head>
+<body>
+    <div class="message" id="message">
+        <!-- Pesan akan dimuat di sini berdasarkan waktu -->
+    </div>
+    <div class="additional-message">
+        Hai Naii, Regina Xyla Maharani ini Danur, aku mau bilang terimakasih banyak sudah memberikan ku kesempatan untuk bisaa sedekat ini sama kamu. aku merasa diriku crush yang paliiing beruntung hahaha. Terimakasih banyak atas momen nyaa di 2024 inii terutama di 3 bulan terkahir kita semakin dekat, mulai dari nugas bareng, jalan jalan, fotobox di bogor dan masih banyak lagii... akuu senang naii, bisa punya banyak kenangan bersamamu, aku minta maaf masih banyak dariku yang kurang , kadang komunikasi ku buruk, kadang sikap dan sifat ku , kadang kelakuan ku juga. aku selalu mencoba untuk menjadi lebih baik naii, terimakasih banyak sudah sabar dan mengerti akuu, sudah sayang sama akuu, semuaa nyaa bisaa akuu rasakan naii,, terutama ketika kamu peluk aku untuk pertama kali nya, waktu di PIM kita jalan berdua aku di rangkul  meski sudah hampir tutup mall nya hahahah, akuu senang ketika pertama kali ajak kamu makan katsu di setiabudi dan ternyata kamuu sukaa jugaaa,terimakasih sudah membalas perasaanku yang sudah kusimpan lama.
+        Xyla adalah sosok yang selalu aku banggakan, akuu izin mengapresiasi dan ikut senang yaaa atas semua yang pencapaian yg kamu miliki baik yang besar maupun yang kecil, akuu ikut senang naii, aku bangga!
+        Semoga ditahun 2025 nantii, kita bisa lulus bareng, wisuda bareng dan jangan lupaa foto bareng hahaha, semoga ditahun depan kamu diberikan kemudahan,kelancaran serta keberuntungan dan kebaikan yang selalu hadir untuk mu. aku beruntung naii bisa punya kesempatan ini begitu juga iguazuu, terimakasih yaa sudah berkenan berkenalan dengan kesayangan ku yang satu ituu.
+        aku sayang kamu,<br>
+        <strong>
+            Salam hangat,
+            <br>
+            Danur
+        </strong>
+    </div>
+</body>
+</html>
